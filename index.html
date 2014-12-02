@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/eerste.css">
+		<link rel="stylesheet" type="text/css" href="css/eersteserrated.css">
+		<script src="js/game.js"></script> 
+	</head>
+	<body>
+		<div id="stats" class="sidebar">
+			<div class="bottomserrated">
+				<div id="value">
+					$<span id="value_">value</span>
+				</div>
+				<div id="perSecond">
+					$<span id="perSecond_">perSecond</span>/s
+				</div>
+			</div>
+		</div>
+		<div id="store" class="sidebar">
+			<ul id="items">
+				<li id="herp" class="item" onclick="game.earn(5)"><span class="icon">&nbsp;</span>Ganha 5</li>
+				<li id="derp" class="item" onclick="game.spend(3)"><span class="icon">&nbsp;</span>Gasta 3</li>
+				<li id="burp" class="item"><span class="icon">&nbsp;</span>Burp</li>
+			</ul>
+		</div>
+		<script>
+			game.init();
+		</script>
+	</body>
+</html>

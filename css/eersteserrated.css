@@ -1,0 +1,37 @@
+.bottomserrated {
+    position: relative;
+    padding:1em;
+    padding-bottom: 2em;
+    background-color: #333;
+}
+.bottomserrated:after {
+    background: linear-gradient(-45deg, #ffffff 8px, transparent 0), linear-gradient(45deg, #ffffff 8px, transparent 0);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+.topserrated{
+    position: relative;
+    padding-top:24px;
+    background-color: #333;
+}
+.topserrated:before {
+    background: linear-gradient(-45deg, #ffffff 8px, transparent 0), linear-gradient(45deg, #ffffff 8px, transparent 0);
+    background-position: center top;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
