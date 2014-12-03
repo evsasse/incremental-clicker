@@ -18,12 +18,14 @@
 		</div>
 		<div id="store" class="box">
 			<ul id="items">
-				<li id="herp" class="item" onclick="game.earn(5)"><span class="icon"></span>Ganha 5</li>
-				<li id="derp" class="item" onclick="game.spend(3)"><span class="icon"></span>Gasta 3</li>
-				<li id="derp" class="item" onclick="game.heal(5)"><span class="icon"></span>Ganha 5 HP</li>
-				<li id="derp" class="item" onclick="game.injure(3)"><span class="icon"></span>Perde 3 HP</li>
-				<li id="derp" class="item" onclick="game.maxHp += 5"><span class="icon"></span>Ganha 5 max HP</li>
-				<li id="derp" class="item" onclick="game.maxHp -= 3"><span class="icon"></span>Perde 3 max HP</li>
+				<li id="herp" class="item" onclick="game.earn(5)"><span class="icon"></span>+$5</li>
+				<li id="derp" class="item" onclick="game.spend(3)"><span class="icon"></span>-$3</li>
+				<li id="derp" class="item" onclick="game.heal(5)"><span class="icon"></span>+5HP</li>
+				<li id="derp" class="item" onclick="game.injure(3)"><span class="icon"></span>-3HP</li>
+				<li id="derp" class="item" onclick="game.setMaxHp(game.maxHp+5)"><span class="icon"></span>+5maxHP</li>
+				<li id="derp" class="item" onclick="game.setMaxHp(game.maxHp-3)"><span class="icon"></span>-3maxHP</li>
+				<li id="derp" class="item" onclick="game.setPerSecond(game.perSecond+0.1)"><span class="icon"></span>+$0.1/s</li>
+				<li id="derp" class="item" onclick="game.setPerSecond(game.perSecond-0.03)"><span class="icon"></span>-0.03/s</li>
 			</ul>
 		</div>
 		<div id="main" class="box">
