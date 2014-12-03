@@ -11,21 +11,43 @@ body{
 	margin: 0 auto;
 	font-family: sans-serif;
 }
-.sidebar{
-	width: 300px;
+.box{
 	background-color: #FFF;
 	height:100%;
 	overflow: auto;
+	text-shadow: 0 1px #000;
+}
+#stats, #store{
+	width: 300px;
 }
 #stats{
 	float:left;
-	text-align: center;
 }
 #store{
 	float:right;
 }
+#main{
+	margin: 0 305px;
+}
+
+/*============================================================================*/
+
+#stats #values{
+	text-align: center;
+}
+#stats #value{
+	color: #EEE;
+	font-size: 2em;
+}
+#stats #perSecond{
+	color: #E6C200;
+	font-weight: bold;
+}
+
+/*============================================================================*/
 
 #store .item{
+	list-style-type: none;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -45,6 +67,7 @@ body{
 	background-color: #00E6B2;
 }
 #store .item .icon{
+	float: left;
 	border-right: solid #FFF 1px;
 	margin-right: 1em;
 	background-color: rgba(0,0,0,0.2);
@@ -59,21 +82,22 @@ body{
 	background-color: #FFD700;
 }
 
-#herp .icon{
+#store #herp .icon{
 	background-image: url(../img/battery-20.png);
 }
-#derp .icon{
+#store #derp .icon{
 	background-image: url(../img/battery-40.png);
 }
-#burp .icon{
+#store #burp .icon{
 	background-image: url(../img/battery-60.png);
 }
 
-#stats #value{
-	color: #EEE;
-	font-size: 2em;
-}
-#stats #perSecond{
-	color: #E6C200;
+/*============================================================================*/
+
+#main #hp{
+	background: linear-gradient(110deg, #C0392B 100%, transparent 0), #80261D;
+	color: #FFF;
 	font-weight: bold;
+	text-align: center;
+	padding: 0.5em;
 }
