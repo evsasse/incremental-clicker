@@ -1,74 +1,16 @@
 Game = function(){
-	this.bank = 0;
-	this.alltime = 0;
-
-	this.perSecond = 0;
-
-	this.hp = 1;
-	this.maxHp = 1;
-
-	this.updateIntervalTime = 0;
+	this.bank; // new Bank();
+	this.hp; // new Hp();
 }
+
+/*===========================================================================*/
+
 Game.prototype = {
-	earn: function(value){
-		this.bank += value;
-		this.alltime += value;
-	},
-	spend: function(value){
-		if(this.bank < value)
-			return false; // Insufficient funds
-		this.bank -= value;
-		return true;
-	},
-
-	setPerSecond: function(value){
-		this.perSecond = value;
-	},
-
-	heal: function(value){
-		this.setHp(this.hp + value);
-	},
-	injure: function(value){
-		this.setHp(this.hp - value);
-	},
-	setHp: function(value){
-		if(value > this.maxHp)
-			this.hp = this.maxHp;
-		else if(value < 0)
-			this.hp = 0;
-		else
-			this.hp = value;
-	},
-	setMaxHp: function(value){
-		if(value < 1)
-			value = 1;
-		if(value < this.hp)
-			this.hp = value;
-		this.maxHp = value;
-	},
-
-	update: function(){
-
-		this.earn(this.perSecond*(this.updateIntervalTime/1000));
-
-		this.bank_.innerHTML = this.bank.toFixed(2);
-
-		this.perSecond_.innerHTML = this.perSecond.toFixed(2);
-
-		this.hp_.innerHTML = this.hp.toFixed(0) + '/' + this.maxHp.toFixed(0);
-		this.hp_.style.background = 'linear-gradient(110deg, #C0392B '+ (this.hp/this.maxHp)*100 +'%, transparent 0), #80261D';
-	},
-	setUpdateInterval: function(value){
-		if(this.updateInterval)
-			clearInterval(this.updateInterval);
-		this.updateInterval = setInterval(function(){game.update()},value);
-		this.updateIntervalTime = value;
-	},
 	init: function(){
-		this.setUpdateInterval(50);
-		this.bank_ = document.getElementById('value_');
-		this.perSecond_ = document.getElementById('perSecond_');
-		this.hp_ = document.getElementById('hp');
+		this.bank = new Bank();
+		this.hp = new Hp();
+
+
 	}
 }
 
