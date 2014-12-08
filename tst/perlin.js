@@ -4,10 +4,12 @@ Perlin = function(seed){
 
 Perlin.prototype = {
 	noise: function(x){
+		var div = 536870869; // Prime near MAX_INT/8
 		x = x + (x * this.seed) + this.seed;
-
-		x = ~0;
-
+		x = x ^ (x << 8) ^ (x << 16) ^ (x << 24);
+		x = x | 0;
+		x = x % div;
+		x = x / div;
 		return x;
 	},
 	smoothNoise: function(x){

@@ -4,13 +4,30 @@
 		<script src="perlin.js"></script>
 	</head>
 	<body>
-		<canvas id="canvas" style="border: solid #F00 2px" width="400px" height="400px"></canvas>
+		<h2>noise</h2>
+		<canvas id="canvasNoise" style="border: solid #F00 2px" width="400px" height="400px"></canvas>
 		<script>
-			var c = document.getElementById("canvas");
+			var c = document.getElementById("canvasNoise");
 			var ctx = c.getContext("2d");
-			var p = new Perlin(44);
-			for(var i=0; i<400; i++)
-				console.log(p.noise(i));
+			var p = new Perlin(424242);
+			for(var i = 0; i<400; i++)
+				ctx.fillRect(i,200+p.noise(i)*200,1,1);
+		</script>
+		<h2>smoothnoise</h2>
+		<canvas id="canvasSmoothNoise" style="border: solid #F00 2px" width="400px" height="400px"></canvas>
+		<script>
+			var c = document.getElementById("canvasSmoothNoise");
+			var ctx = c.getContext("2d");
+			for(var i = 0; i<400; i++)
+				ctx.fillRect(i,200+p.smoothNoise(i)*200,1,1);
+		</script>
+		<h2>perlinnoise</h2>
+		<canvas id="canvasPerlin" style="border: solid #F00 2px" width="400px" height="400px"></canvas>
+		<script>
+			var c = document.getElementById("canvasPerlin");
+			var ctx = c.getContext("2d");
+			for(var i = 0; i<400; i++)
+				ctx.fillRect(i,200+p.perlin(i,2,0)*200,1,1);
 		</script>
 	</body>
 </html>
